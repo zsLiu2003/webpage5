@@ -12,9 +12,36 @@
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%);
+            background: linear-gradient(to right, #1a3c34, #28a745); /* Deep green to bright green gradient */
             color: #1a1a1a;
             line-height: 1.6;
+        }
+        header {
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            animation: fadeIn 2s ease-in;
+        }
+        nav {
+            background: #333;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00b7eb;
         }
         .hero {
             min-height: 60vh;
@@ -83,6 +110,7 @@
         }
         .card-body {
             padding: 2rem;
+            text-align: center;
         }
         .card-title {
             font-size: 2rem;
@@ -93,29 +121,6 @@
             font-size: 1.1rem;
             color: #4a4a4a;
             margin-bottom: 1.5rem;
-        }
-        .price-text {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #007bff;
-            margin-bottom: 1.5rem;
-        }
-        .features {
-            list-style: none;
-            padding: 0;
-            font-size: 1rem;
-            color: #4a4a4a;
-        }
-        .features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .features li::before {
-            content: '✓';
-            color: #007bff;
-            margin-right: 0.5rem;
-            font-weight: bold;
         }
         .back-link {
             display: inline-block;
@@ -128,6 +133,32 @@
         .back-link:hover {
             color: #0056b3;
             text-decoration: underline;
+        }
+        .decorative-section {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .decorative-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        .decorative-section p {
+            font-size: 1rem;
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+        }
+        .decorative-section .cta-button {
+            margin-top: 1rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -142,11 +173,14 @@
             .card-title {
                 font-size: 1.5rem;
             }
-            .card-text, .features {
+            .card-text, .decorative-section p {
                 font-size: 0.9rem;
             }
-            .price-text {
-                font-size: 1.25rem;
+            header h1 {
+                font-size: 2rem;
+            }
+            .decorative-section h2 {
+                font-size: 1.5rem;
             }
         }
         @media (max-width: 576px) {
@@ -156,10 +190,30 @@
             .container {
                 padding: 2rem 0.5rem;
             }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin-bottom: 0.5rem;
+            }
+            .decorative-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>OnePlus 12 - Speed Redefined</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     <section class="hero">
         <div class="hero-content">
             <h1>OnePlus 12</h1>
@@ -173,14 +227,18 @@
             <img src="static/images/oneplus12.jpg" class="product-img" alt="OnePlus 12">
             <div class="card-body">
                 <h2 class="card-title">OnePlus 12</h2>
-                <p class="card-text">Elevate your mobile experience with the OnePlus 12. Engineered for speed, this high-performance smartphone features lightning-fast charging and a buttery-smooth display, delivering a seamless and dynamic user experience.</p>
-                <p class="price-text"><strong>Price:</strong> $899.99</p>
-                <ul class="features">
-                    <li>120Hz Fluid AMOLED display for smooth visuals</li>
-                    <li>SuperVOOC charging for ultra-fast power-ups</li>
-                    <li>Snapdragon 8 Gen 2 for top-tier performance</li>
-                </ul>
+                <p class="card-text">Speed and style in perfect harmony.</p>
             </div>
+        </div>
+        <div class="decorative-section">
+            <h2>Unmatched Speed</h2>
+            <p>Experience blazing-fast performance.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+        <div class="decorative-section">
+            <h2>Sleek Design</h2>
+            <p>The OnePlus 12 delivers flagship-grade performance wrapped in a sleek design, featuring a 6.82″ QHD+ LTPO AMOLED display with adaptive 1–120 Hz refresh rate and up to 4,500 nits peak brightness for vivid visuals even under sunlight. At its core sits the Snapdragon 8 Gen 3 chipset paired with up to 16 GB LPDDR5X RAM and UFS 4.0 storage, backed by an enhanced cooling system that ensures sustained speed. Powered by a 5,400 mAh battery with 100 W wired and 50 W wireless fast charging, it offers multi-day autonomy. Its Hasselblad‑tuned triple-camera system (50 MP wide, 48 MP ultra-wide, 64 MP 3× telephoto) captures versatile and vibrant shots, and added features like Aqua Touch display, IR blaster, alert slider, Dolby Atmos audio, and IP65 water resistance elevate the experience. It’s a top-tier flagship offering robust performance, spectacular visuals, and fast charging—all at strong value.</p>
+            <a href="#" class="cta-button">See More</a>
         </div>
     </div>
 </body>
